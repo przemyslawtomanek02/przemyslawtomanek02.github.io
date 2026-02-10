@@ -1,0 +1,82 @@
+---
+import dropShoes from "../assets/dropshoe_hero.png";
+import projectSectionBg from "../assets/bg-portfolio.png";
+---
+
+<section
+  class="relative min-h-screen w-full overflow-hidden bg-black py-20 px-6 md:px-12"
+>
+  <div
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 md:bg-contain"
+    style={{ backgroundImage: `url(${projectSectionBg.src})` }}
+  >
+  </div>
+
+  <div
+    class="absolute inset-0 bg-[linear-gradient(to_bottom,black_0%,transparent_10%,transparent_90%,black_100%)] pointer-events-none"
+  >
+  </div>
+  <div
+    class="relative h-full mx-auto flex items-center justify-center flex-col gap-5 px-4"
+  >
+    <span
+      class="inline-block bg-black px-4 py-2 rounded-full text-stone-400 border border-[#3F3E3E]"
+    >
+      Projects</span
+    >
+    <h1 class="text-white text-4xl md:text-5xl text-center">
+      Few selected
+      <span
+        class="text-[#98D517] italic"
+        style="font-family: 'Instrument Serif', serif;"
+      >
+        projects
+      </span>
+    </h1>
+    <p class="text-stone-400 text-center leading-relaxed">
+      A showcase of innovative solutions that solve real-world digital
+      challenges.
+    </p>
+  </div>
+  {/* First project - start section */}
+  <div
+    class="w-full mt-12 bg-neutral-900/40 backdrop-blur-md rounded-3xl text-stone-400 border border-neutral-800 p-8 md:p-12 grid grid-cols-2 md:grid-cols-3 h-auto gap-6 md:content-center"
+  >
+    <div class="col-span-2 lg:col-span-1 flex flex-col gap-4 justify-center">
+      <h2 class="text-white text-4xl">
+        Drop Shoes <span
+          class="italic"
+          style="font-family: 'Instrument Serif', serif;"><br />ecommerce</span
+        > website
+      </h2>
+      <div class="w-auto gap-2 flex">
+        <p
+          class="py-1 px-4 bg-black rounded-4xl border-1 border-neutral-700 my-1 w-fit"
+        >
+          UI Design
+        </p>
+        <p
+          class="py-1 px-4 bg-black rounded-4xl border-1 border-neutral-700 my-1 w-fit"
+        >
+          UX Design
+        </p>
+      </div>
+      <p>
+        A unique online store selling footwear. The layout includes elements
+        that increase conversions among Generation Z users. It features a
+        dynamic design and unique graphics tailored to the young user.
+      </p>
+      <a
+        href=""
+        class="md:w-fit px-6 text-white bg-white/10 border-1 text-center py-2 rounded-4xl hover:bg-white hover:text-black transition-colors duration-200"
+        >Comming soon</a
+      >
+    </div>
+    <div
+      class="col-span-3 content-center md:content-center lg:col-span-2 order-first lg:order-none"
+    >
+      <img src={dropShoes.src} alt="DropShoes" />
+    </div>
+  </div>
+  {/* First project - start section */}
+</section>

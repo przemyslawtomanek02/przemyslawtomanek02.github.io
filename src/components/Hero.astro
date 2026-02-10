@@ -1,35 +1,73 @@
 ---
-import heroImage from '../assets/bg-hero.png';
+import heroImage from "../assets/bg-hero.png";
 ---
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
-<div class="the-div flex justify-center relative h-screen overflow-hidden -mt-[100px]" style={`background-image: url(${heroImage.src}); background-size: cover; background-position: center;`}>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
+  rel="stylesheet"
+/>
+
+<div
+  class="the-div flex justify-center relative h-screen overflow-hidden -mt-[100px]"
+  style={`background-image: url(${heroImage.src}); background-size: cover; background-position: center;`}
+>
   <div class="absolute inset-0 bg-black/40"></div>
 
-  <div class="absolute bottom-0 left-0 right-0 h-[10%] bg-gradient-to-t from-black to-transparent"></div>
+  <div
+    class="absolute bottom-0 left-0 right-0 h-[10%] bg-gradient-to-t from-black to-transparent"
+  >
+  </div>
 
   <div class="relative h-full flex items-center justify-center flex-col gap-4">
-   <p class="bg-black pl-4 pr-4 p-2 rounded-[48px] text-stone-400 border-1 border-[#3F3E3E]">UI/UX Designer & Web developer</p> 
-    <h1 class="text-white text-5xl sm:text-5xl lg:text-7xl 2xl:text-7xl text-center">
-      Crafting digital 
-      <span class="text-[#98D517] italic" style="font-family: 'Instrument Serif', serif;">
+    <p
+      class="bg-black pl-4 pr-4 p-2 rounded-[48px] text-stone-400 border-1 border-[#3F3E3E]"
+    >
+      UI/UX Designer & Web developer
+    </p>
+    <h1
+      class="text-white text-5xl sm:text-5xl lg:text-7xl 2xl:text-7xl text-center"
+    >
+      Crafting digital
+      <span
+        class="text-[#98D517] italic"
+        style="font-family: 'Instrument Serif', serif;"
+      >
         experiences
-      </span> 
-      <br> that convert and inspire
+      </span>
+      <br /> that convert and inspire
     </h1>
     <p class="text-stone-400 text-center text-base sm:text-lg px-4 max-w-2xl">
-      I transform complex web challenges into elegant, high-performance <br class="hidden sm:inline" /> solutions. Every pixel and line of code is designed to drive results.
+      I transform complex web challenges into elegant, high-performance <br
+        class="hidden sm:inline"
+      /> solutions. Every pixel and line of code is designed to drive results.
     </p>
-           <a href="#contact" class="md:inline-flex relative items-center px-14 py-3 overflow-hidden text-lg font-medium text-green-50 border-1 border-green-50 rounded-full hover:text-stone-950 group mt-5">
-           <span class="absolute left-0 block w-full h-0 transition-all bg-green-50 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
-           <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
-               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-               </svg>
-           </span>
-           <span class="relative">Explore my portfolio</span>
-       </a>
+    <a
+      href="#contact"
+      class="md:inline-flex relative items-center px-14 py-3 overflow-hidden text-lg font-medium text-green-50 border-1 border-green-50 rounded-full hover:text-stone-950 group mt-5"
+    >
+      <span
+        class="absolute left-0 block w-full h-0 transition-all bg-green-50 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"
+      ></span>
+      <span
+        class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease"
+      >
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </span>
+      <span class="relative">Explore my portfolio</span>
+    </a>
   </div>
 </div>
