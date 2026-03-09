@@ -4,22 +4,25 @@ import "../styles/global.css";
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,900,700,500,300,400&display=swap" rel="stylesheet">
-		<title>My portfolio</title>
-	</head>
-	<body class="pl-2 pr-2">
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@1,900,700,500,300,400&display=swap"
+      rel="stylesheet"
+    />
+    <title>My portfolio</title>
+  </head>
+  <body class="pl-2 pr-2 antialiased">
+    <slot />
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		font-family: 'Satoshi', sans-serif;
-		background-color: black;
-	}
+  html,
+  body {
+    font-family: "Satoshi", sans-serif;
+    background-color: black;
+  }
 </style>

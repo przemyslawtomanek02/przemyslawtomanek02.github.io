@@ -1,0 +1,58 @@
+---
+import projectSectionBg from "../assets/bg-journey.png";
+import profileImage from "../assets/profile-image.svg";
+---
+
+<section
+  class="relative min-h-screen w-full overflow-hidden bg-black py-20 px-6 md:px-12 subpixel-antialiased"
+>
+  <div
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 md:bg-contain"
+    style={{ backgroundImage: `url(${projectSectionBg.src})` }}
+  >
+  </div>
+
+  <div
+    class="absolute inset-0 bg-[linear-gradient(to_bottom,black_0%,transparent_10%,transparent_90%,black_100%)] pointer-events-none"
+  >
+  </div>
+  <div
+    class="relative h-full mx-auto flex items-center justify-center flex-col gap-5 px-4"
+  >
+    <span
+      class="inline-block bg-black px-4 py-2 rounded-full text-stone-400 border border-[#3F3E3E]"
+    >
+      Journey</span
+    >
+    <h1
+      class="text-transparent bg-clip-text bg-gradient-to-r from-neutral-50 to-neutral-400 text-5xl md:text-6xl text-center pb-2"
+    >
+      Design professional with a <span
+        class="text-[#98D517] italic"
+        style="font-family: 'Instrument Serif', serif;"
+      >
+        passion for solving
+      </span>
+      <br />
+      complex digital challenges
+    </h1>
+    <p class="text-stone-400 text-center leading-relaxed">
+      Five years of experience transforming ideas into functional, beautiful <br
+      />
+      digital products across multiple industries and platforms.
+    </p>
+    <img
+      src={`${profileImage.src}`}
+      alt="Portfolio image"
+      class="m-5 [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_calc(100%-30px),transparent_100%)] [mask-image:linear-gradient(to_bottom,black_0%,black_calc(100%-30px),transparent_100%)]"
+    />
+
+    <a
+      href="#"
+      class="font-medium bg-neutral-500/20 backdrop-blur-[2px]
+ md:w-fit px-8 py-3 text-white border border-white/20 rounded-full duration-200 text-center hover:shadow-[0px_0px_10px_rgba(255,255,255,0.6)] hover:border-white/60"
+    >
+      Download résumé
+    </a>
+  </div>
+</section>
