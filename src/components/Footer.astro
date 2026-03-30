@@ -1,0 +1,42 @@
+---
+import logo from "../assets/logo-1.svg";
+
+const navLinks = ["Work", "Service", "Projects", "About", "Blog"];
+---
+
+<footer class="w-full bg-black border-t border-neutral-800">
+  <div class="mx-auto px-8 py-8">
+    <!-- Top row: logo + nav -->
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="shrink-0">
+        <img src={logo.src} alt="Logo" class="w-10 h-10" />
+      </a>
+
+      <!-- Nav links -->
+      <div class="flex gap-5">
+        <a
+          href="https://github.com/przemyslawtomanek02"
+          class="text-neutral-500 hover:text-neutral-300 transition-colors"
+          target="_blank"
+        >
+          Github
+        </a>
+        <a
+          href="https://www.linkedin.com/in/przemys%C5%82aw-tomanek-8392072b3/"
+          class="text-neutral-500 hover:text-neutral-300 transition-colors"
+          target="_blank"
+        >
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom row: copyright centered -->
+  <div class="mt-6 text-center pb-3">
+    <p class="text-neutral-500 text-sm">
+      © 2026 Przemyslaw Tomanek. All rights reserved.
+    </p>
+  </div>
+</footer>

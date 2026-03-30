@@ -17,28 +17,28 @@ import logo from "../assets/logo-1.svg";
         >
           <li>
             <a
-              href="#"
+              href="#home"
               class="text-md text-stone-50 hover:text-green-50 transition-colors"
               >Home</a
             >
           </li>
           <li>
             <a
-              href="#"
+              href="#services"
               class="text-md text-stone-50 hover:text-green-50 transition-colors"
               >Services</a
             >
           </li>
           <li>
             <a
-              href="#"
+              href="#portfolio"
               class="text-md text-stone-50 hover:text-green-50 transition-colors"
               >Portfolio</a
             >
           </li>
           <li>
             <a
-              href="#"
+              href="#blog"
               class="text-md text-stone-50 hover:text-green-50 transition-colors"
               >Blog</a
             >
@@ -47,7 +47,7 @@ import logo from "../assets/logo-1.svg";
 
         <div class="hidden md:block">
           <a
-            href="#"
+            href="#contact"
             class="text-[18px] font-medium bg-neutral-500/20 backdrop-blur-[2px] md:w-fit px-8 py-3 text-white border border-white/20 rounded-full ml-6 duration-200 text-center hover:shadow-[0px_0px_10px_rgba(255,255,255,0.6)] hover:border-white/60"
           >
             Contact
@@ -73,43 +73,40 @@ import logo from "../assets/logo-1.svg";
         </button>
       </div>
 
+      <!-- Mobile menu -->
       <div
         class="mobile-menu absolute top-[100%] left-0 w-full bg-black backdrop-blur-md border-t border-white/10 p-6 hidden md:hidden flex-col items-center gap-6"
       >
         <ul class="flex flex-col space-y-4 text-lg text-center w-full">
           <li>
             <a
-              href="#"
+              href="#home"
               class="block w-full py-2 text-md text-stone-50 hover:text-green-50 transition-colors"
-              >Home</a
-            >
+              >Home</a>
           </li>
           <li>
             <a
-              href="#"
+              href="#services"
               class="block w-full py-2 text-md text-stone-50 hover:text-green-50 transition-colors"
-              >Services</a
-            >
+              >Services</a>
           </li>
           <li>
             <a
-              href="#"
+              href="#portfolio"
               class="block w-full py-2 text-md text-stone-50 hover:text-green-50 transition-colors"
-              >Portfolio</a
-            >
+              >Portfolio</a>
           </li>
           <li>
             <a
-              href="#"
+              href="#blog"
               class="block w-full py-2 text-md text-stone-50 hover:text-green-50 transition-colors"
-              >Blog</a
-            >
+              >Blog</a>
           </li>
         </ul>
 
         <a
-          href="#"
-          class="w-full text-[18px] fotn-medium bg-neutral-500/20 backdrop-blur-[2px] md:w-fit px-8 py-3 text-white border border-white/20 rounded-full duration-200 text-center hover:shadow-[0px_0px_10px_rgba(255,255,255,0.6)] hover:border-white/60"
+          href="#contact"
+          class="w-full text-[18px] font-medium bg-neutral-500/20 backdrop-blur-[2px] md:w-fit px-8 py-3 text-white border border-white/20 rounded-full duration-200 text-center hover:shadow-[0px_0px_10px_rgba(255,255,255,0.6)] hover:border-white/60"
         >
           Contact
         </a>
@@ -128,7 +125,7 @@ import logo from "../assets/logo-1.svg";
     menuButtons.forEach((btn, index) => {
       btn.addEventListener("click", () => {
         mobileMenus[index].classList.toggle("hidden");
-        mobileMenus[index].classList.toggle("flex"); // Toggles flex to center items
+        mobileMenus[index].classList.toggle("flex");
       });
     });
   </script>

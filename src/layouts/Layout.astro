@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import logo from "../assets/logo-1.svg";
 ---
 
 <!doctype html>
@@ -7,12 +8,12 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={logo.src} />
     <link
       href="https://api.fontshare.com/v2/css?f[]=satoshi@1,900,700,500,300,400&display=swap"
       rel="stylesheet"
     />
-    <title>My portfolio</title>
+    <title>Przemyslaw Tomanek Programmer UI/UX Designer</title>
   </head>
   <body class="pl-2 pr-2 antialiased">
     <slot />
@@ -24,5 +25,6 @@ import "../styles/global.css";
   body {
     font-family: "Satoshi", sans-serif;
     background-color: black;
+    color: white;
   }
 </style>

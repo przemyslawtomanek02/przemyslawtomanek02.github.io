@@ -1,0 +1,188 @@
+---
+import faqImage from "../assets/faq-bg.png";
+import faqArrow from "../assets/faq-arrow.svg";
+
+const faqs = [
+  {
+    question: "What services do you offer?",
+    answer:
+      "I provide end-to-end design services including UI/UX design, web development, SEO optimization, and digital strategy consulting. My goal is to deliver comprehensive solutions that meet your specific business needs.",
+    defaultOpen: true,
+  },
+  {
+    question: "How long does a typical project take?",
+    answer:
+      "Project timelines vary depending on scope and complexity. A landing page typically takes 1–2 weeks, while a full web application can take 4–8 weeks. I'll give you a detailed estimate after our initial consultation.",
+    defaultOpen: false,
+  },
+  {
+    question: "Do you work with clients remotely?",
+    answer:
+      "Yes, I work with clients worldwide entirely remotely. Communication happens via video calls, email, and project management tools, ensuring smooth collaboration regardless of location or time zone.",
+    defaultOpen: false,
+  },
+  {
+    question: "What does the design process look like?",
+    answer:
+      "My process starts with a discovery call to understand your goals, followed by wireframes and mood boards for approval. Once the direction is set, I move into high-fidelity design and then development, with feedback rounds at each stage.",
+    defaultOpen: false,
+  },
+  {
+    question: "Do you offer post-launch support?",
+    answer:
+      "Absolutely. I offer maintenance packages that include bug fixes, content updates, performance monitoring, and feature additions. We can discuss a retainer plan that fits your ongoing needs after the project launches.",
+    defaultOpen: false,
+  },
+];
+---
+
+<section
+  class="relative min-h-screen w-full overflow-hidden bg-black py-20 px-6 md:px-12 subpixel-antialiased"
+>
+  <!-- Background image -->
+  <div
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 md:bg-contain"
+    style={{ backgroundImage: `url(${faqImage.src})` }}
+  >
+  </div>
+
+  <!-- Gradient overlay -->
+  <div
+    class="absolute inset-0 bg-[linear-gradient(to_bottom,black_0%,transparent_10%,transparent_90%,black_100%)] pointer-events-none"
+  >
+  </div>
+
+  <!-- Header -->
+  <div
+    class="relative h-full mx-auto flex items-center justify-center flex-col gap-5 px-4"
+  >
+    <span
+      class="inline-block bg-black px-4 py-2 rounded-full text-stone-400 border border-[#3F3E3E]"
+    >
+      FAQs
+    </span>
+    <h1
+      class="text-transparent bg-clip-text bg-gradient-to-r from-neutral-50 to-neutral-400 text-5xl md:text-6xl text-center pb-2"
+    >
+      Frequently asked
+      <span
+        class="text-[#98D517] italic"
+        style="font-family: 'Instrument Serif', serif;"
+      >
+        questions
+      </span>
+    </h1>
+    <p class="text-stone-400 text-center leading-relaxed">
+      Common questions about my design services <br /> and approach to digital solutions.
+    </p>
+  </div>
+
+  <!-- FAQ List -->
+  <div class="flex justify-center mt-[50px]">
+    <div class="flex flex-col gap-2 w-full max-w-2xl px-4">
+      {
+        faqs.map((faq) => (
+          <div class="faq-element bg-neutral-900/40 backdrop-blur-md rounded-3xl text-stone-400 border border-neutral-800 p-8">
+            <div class="flex justify-between items-center gap-4 cursor-pointer button">
+              <h2 class="text-transparent bg-clip-text bg-gradient-to-r from-neutral-50 to-neutral-400 text-xl select-none">
+                {faq.question}
+              </h2>
+              <div class="shrink-0">
+                <img
+                  src={faqArrow.src}
+                  alt="toggle"
+                  class={`w-8 transition-transform duration-300 ${faq.defaultOpen ? "rotate-0" : "rotate-180"}`}
+                />
+              </div>
+            </div>
+            <div class="faq-answer overflow-hidden transition-all duration-400 ease-in-out">
+              <p class="pt-4 leading-relaxed">{faq.answer}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Still have questions? CTA -->
+  <section id="contact">
+    <div class="relative flex justify-center mt-8">
+      <div
+        class="w-full max-w-[640px] rounded-3xl border border-neutral-800 px-10 py-14 flex flex-col items-center gap-4 text-center"
+      >
+        <h2
+          class="text-transparent bg-clip-text bg-gradient-to-r from-neutral-50 to-neutral-400 text-4xl md:text-5xl font-light tracking-tight"
+        >
+          Still have questions?
+        </h2>
+
+        <div id="contact">
+          <p class="text-stone-500 text-sm tracking-widest leading-relaxed">
+            Let's discuss your project and find the perfect solution together.
+          </p>
+          <p class="text-stone-400 text-sm tracking-widest leading-relaxed">
+            tel: +48 573 990 182, email: przemyslaw.tomanek02@gmail.com
+          </p>
+        </div>
+
+        <a
+          href="#contact"
+          class="font-medium bg-neutral-500/20 backdrop-blur-[2px]
+          md:w-fit px-8 py-3 text-white border border-white/20 rounded-full duration-200 text-center hover:shadow-[0px_0px_10px_rgba(255,255,255,0.6)] hover:border-white/60"
+          >Contact me
+        </a>
+      </div>
+    </div>
+  </section>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const faqElements = document.querySelectorAll<HTMLElement>(".faq-element");
+
+    faqElements.forEach((el) => {
+      const button = el.querySelector<HTMLElement>(".button");
+      const answerWrapper = el.querySelector<HTMLElement>(".faq-answer");
+      const arrow = el.querySelector<HTMLImageElement>("img");
+
+      if (!button || !answerWrapper || !arrow) return;
+
+      // Determine initial state by arrow rotation
+      const isInitiallyOpen = !arrow.classList.contains("rotate-180");
+
+      if (isInitiallyOpen) {
+        answerWrapper.style.maxHeight = answerWrapper.scrollHeight + "px";
+        answerWrapper.style.opacity = "1";
+      } else {
+        answerWrapper.style.maxHeight = "0px";
+        answerWrapper.style.opacity = "0";
+      }
+
+      answerWrapper.style.transition =
+        "max-height 0.4s ease, opacity 0.3s ease";
+
+      button.addEventListener("click", () => {
+        const isOpen = answerWrapper.style.maxHeight !== "0px";
+
+        // Close all
+        faqElements.forEach((other) => {
+          const otherAnswer = other.querySelector<HTMLElement>(".faq-answer");
+          const otherArrow = other.querySelector<HTMLImageElement>("img");
+          if (!otherAnswer || !otherArrow) return;
+          otherAnswer.style.maxHeight = "0px";
+          otherAnswer.style.opacity = "0";
+          otherArrow.classList.remove("rotate-0");
+          otherArrow.classList.add("rotate-180");
+        });
+
+        // Open clicked if it was closed
+        if (!isOpen) {
+          answerWrapper.style.maxHeight = answerWrapper.scrollHeight + "px";
+          answerWrapper.style.opacity = "1";
+          arrow.classList.remove("rotate-180");
+          arrow.classList.add("rotate-0");
+        }
+      });
+    });
+  });
+</script>
