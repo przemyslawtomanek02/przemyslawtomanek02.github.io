@@ -4,134 +4,110 @@ import iconImage from "../assets/first-icon.svg";
 import iconSeo from "../assets/seo-icon.svg";
 import iconWebDev from "../assets/webdev-icon.svg";
 import iconGraphicDesign from "../assets/graphic-icon.svg";
+
+const services = [
+  {
+    icon: iconImage.src,
+    title: "UI/UX",
+    titleItalic: "design",
+    description:
+      "Creating intuitive interfaces that guide users seamlessly through digital experiences.",
+    alt: "UI/UX Design",
+  },
+  {
+    icon: iconSeo.src,
+    title: "SEO, AI",
+    titleItalic: "optimization",
+    description:
+      "Implementing strategies that improve search rankings and integrate intelligent design solutions.",
+    alt: "SEO & AI",
+  },
+  {
+    icon: iconWebDev.src,
+    title: "Web",
+    titleItalic: "development",
+    description:
+      "Building responsive, fast-loading websites using Webflow, Framer, WordPress, and modern technology.",
+    alt: "Web Development",
+  },
+  {
+    icon: iconGraphicDesign.src,
+    title: "Graphic",
+    titleItalic: "design",
+    description:
+      "Crafting compelling graphic designs that communicate brand messages with creativity and strategic impact.",
+    alt: "Graphic Design",
+  },
+];
 ---
 
-<section id="services"></section>
-<div class="p-2 mt-24">
-  <div class="relative h-full flex items-center justify-center flex-col gap-5">
-    <p
-      class="bg-black pl-4 pr-4 p-2 rounded-[48px] text-stone-400 border-1 border-[#3F3E3E]"
-    >
-      Service
-    </p>
-    <h1
-      class="text-transparent bg-clip-text bg-gradient-to-r from-neutral-50 to-neutral-400 text-5xl md:text-6xl text-center"
-    >
-      How can I help
-      <span
-        class="text-[#98D517] italic"
-        style="font-family: 'Instrument Serif', serif;"
+<section id="services" class="w-full bg-black py-24 px-6 md:px-12">
+  <div class="mx-auto max-w-7xl">
+    <!-- Header -->
+    <div class="flex flex-col items-center gap-4 text-center mb-16">
+      <p
+        class="bg-black px-4 py-2 rounded-full text-stone-400 border border-[#3F3E3E] text-sm"
       >
-        your
-      </span>
-      business
-    </h1>
-    <p class="text-stone-400 text-center text-base sm:text-lg px-4 max-w-2xl">
-      I combine design, development, and marketing into solutions
-      <br class="hidden sm:inline" />
-      that merge aesthetics, technology, and business goals.
-    </p>
-  </div>
-
-  <div
-    class="grid grid-cols-1 lg:grid-cols-1 xl:grid-cols-2 gap-2 sm:gap-1 p-4 md:p-12 mt-12"
-  >
-    <div class="flex justify-center xl:justify-start">
-      <img
-        class="w-full md:w-[42vw]"
-        src={`${serviceImage.src}`}
-        alt="Service Image"
-      />
+        Service
+      </p>
+      <h1
+        class="text-transparent bg-clip-text bg-gradient-to-r from-neutral-50 to-neutral-400 text-5xl md:text-6xl"
+      >
+        How can I help
+        <span
+          class="text-[#98D517] italic"
+          style="font-family: 'Instrument Serif', serif;">your</span
+        > business
+      </h1>
+      <p class="text-stone-400 text-base max-w-xl leading-relaxed">
+        I combine design, development, and marketing into solutions that merge
+        aesthetics, technology, and business goals.
+      </p>
     </div>
-    <div class="text-stone-500 flex items-center">
-      <div
-        class="grid grid-cols-1 gap-1 md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-10"
-      >
-        <div
-          class="bg-neutral-900 p-8 text-center justify-center gap-4 flex flex-col items-center rounded-3xl border-1 border-neutral-800"
-        >
-          <img class="w-14" src={`${iconImage.src}`} alt="Icon UI/UX Design" />
-          <h2
-            class="text-[28px] text-transparent bg-clip-text bg-gradient-to-r from-neutral-50 to-neutral-400"
-          >
-            UI/UX <span
-              class="italic"
-              style="font-family: 'Instrument Serif', serif;">design</span
-            >
-          </h2>
-          <div
-            class="w-full h-px bg-gradient-to-r from-transparent via-neutral-100 to-transparent"
-          >
-          </div>
-          <p>
-            Creating intuitive interfaces that guide users seamlessly through
-            digital experiences.
-          </p>
-        </div>
-        <div
-          class="bg-neutral-900 p-8 text-center justify-center gap-4 flex flex-col items-center rounded-3xl border-1 border-neutral-800"
-        >
-          <img class="w-15" src={`${iconSeo.src}`} alt="Icon Image" />
-          <h2
-            class="text-[28px] text-transparent bg-clip-text bg-gradient-to-r from-neutral-50 to-neutral-400"
-          >
-            SEO, AI <span
-              class="italic"
-              style="font-family: 'Instrument Serif', serif;">optimization</span
-            >
-          </h2>
-          <div
-            class="w-full h-px bg-gradient-to-r from-transparent via-neutral-100 to-transparent"
-          >
-          </div>
-          <p>
-            Implementing strategies that improve search rankings and integrate
-            intelligent design solutions.
-          </p>
-        </div>
-        <div
-          class="bg-neutral-900 p-8 text-center justify-center gap-4 flex flex-col items-center rounded-3xl border-1 border-neutral-800"
-        >
-          <img class="w-9" src={`${iconWebDev.src}`} alt="Icon Image" />
-          <h2
-            class="text-[28px] text-transparent bg-clip-text bg-gradient-to-r from-neutral-50 to-neutral-400"
-          >
-            Web <span
-              class="italic"
-              style="font-family: 'Instrument Serif', serif;">development</span
-            >
-          </h2>
-          <div
-            class="w-full h-px bg-gradient-to-r from-transparent via-neutral-100 to-transparent"
-          >
-          </div>
-          <p>
-            Building responsive, fast-loading websites using webflow, framer,
-            wordpress, modern technology.
-          </p>
-        </div>
-        <div
-          class="bg-neutral-900 p-8 text-center justify-center gap-4 flex flex-col items-center rounded-3xl border-1 border-neutral-800"
-        >
-          <img class="w-12" src={`${iconGraphicDesign.src}`} alt="Icon Image" />
-          <h2
-            class="text-[28px] text-transparent bg-clip-text bg-gradient-to-r from-neutral-50 to-neutral-400"
-          >
-            Graphic <span
-              class="italic"
-              style="font-family: 'Instrument Serif', serif;">design</span
-            >
-          </h2>
-          <div
-            class="w-full h-px bg-gradient-to-r from-transparent via-neutral-100 to-transparent"
-          >
-          </div>
-          <p>
-            Crafting compelling graphic designs that communicate brand messages
-            with creativity and strategic impact.
-          </p>
-        </div>
+
+    <!-- Body: image + cards -->
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-12 items-center">
+      <!-- Image -->
+      <div class="flex justify-center xl:justify-start">
+        <img
+          src={serviceImage.src}
+          alt="Service overview"
+          class="w-full max-w-[480px] max-h-[520px] object-contain xl:max-w-none xl:w-[90%]"
+        />
+      </div>
+
+      <!-- Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {
+          services.map((s) => (
+            <div class="group flex flex-col gap-5 p-8 rounded-2xl border border-neutral-800/70 bg-neutral-900/30 backdrop-blur-sm hover:bg-neutral-900/60 hover:border-neutral-700 transition-all duration-300">
+              <!-- Icon pill -->
+              <div class="w-14 h-14 flex items-center justify-center rounded-2xl bg-neutral-800/80 group-hover:bg-neutral-700/80 transition-colors shrink-0">
+                <img src={s.icon} alt={s.alt} class="w-7 h-7 object-contain" />
+              </div>
+
+              <!-- Title -->
+              <h2 class="text-white font-medium text-2xl leading-tight">
+                {s.title}{" "}
+                <span
+                  class="text-[#98D517] italic font-normal"
+                  style="font-family: 'Instrument Serif', serif;"
+                >
+                  {s.titleItalic}
+                </span>
+              </h2>
+
+              <!-- Divider -->
+              <div class="w-full h-px bg-neutral-800 group-hover:bg-neutral-700 transition-colors" />
+
+              <!-- Description -->
+              <p class="text-stone-400 text-sm leading-relaxed group-hover:text-stone-300 transition-colors">
+                {s.description}
+              </p>
+            </div>
+          ))
+        }
       </div>
     </div>
   </div>
-</div>
+</section>

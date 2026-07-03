@@ -1,0 +1,280 @@
+---
+const emailjsPublicKey = import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY ?? "";
+const emailjsServiceId = import.meta.env.PUBLIC_EMAILJS_SERVICE_ID ?? "";
+const emailjsTemplateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
+---
+
+<section
+  id="contact"
+  class="relative min-h-screen w-full overflow-hidden bg-black py-20 px-6 md:px-12 subpixel-antialiased"
+>
+  <!-- Content -->
+  <div
+    class="relative h-full mx-auto flex items-center justify-center flex-col gap-4 px-4"
+  >
+    <!-- Header -->
+    <span
+      class="inline-block bg-black px-4 py-2 rounded-full text-stone-400 border border-[#3F3E3E]"
+    >
+      Contact
+    </span>
+    <h1
+      class="text-transparent bg-clip-text bg-gradient-to-r from-neutral-50 to-neutral-400 text-5xl md:text-6xl text-center pb-2"
+    >
+      Still have
+      <span
+        class="text-[#98D517] italic"
+        style="font-family: 'Instrument Serif', serif;"
+      >
+        questions?
+      </span>
+    </h1>
+    <p class="text-stone-400 text-center leading-relaxed max-w-2xl">
+      Let's discuss your project and find the perfect solution together. Fill
+      out the form below and I'll get back to you within 24 hours.
+    </p>
+
+    <!-- Form -->
+    <div class="flex justify-center mt-12 w-full">
+      <div class="w-full max-w-2xl">
+        <!-- Status messages -->
+        <div
+          id="form-success"
+          class="hidden mb-6 p-4 bg-[#98D517]/10 border border-[#98D517]/30 rounded-2xl text-[#98D517] text-center text-sm"
+        >
+          ✓ Message sent successfully! I'll get back to you within 24 hours.
+        </div>
+        <div
+          id="form-error"
+          class="hidden mb-6 p-4 bg-red-500/10 border border-red-500/30 rounded-2xl text-red-400 text-center text-sm"
+        >
+        </div>
+
+        <form
+          id="contact-form"
+          class="flex flex-col gap-6"
+          data-key={emailjsPublicKey}
+          data-service={emailjsServiceId}
+          data-template={emailjsTemplateId}
+        >
+          <!-- Honeypot: invisible to humans, bots fill it -->
+          <div
+            style="position:absolute;left:-9999px;opacity:0;pointer-events:none;"
+            aria-hidden="true"
+          >
+            <input
+              type="text"
+              name="honeypot"
+              tabindex="-1"
+              autocomplete="off"
+            />
+          </div>
+
+          <!-- Form load timestamp for time-based check -->
+          <input type="hidden" name="form_loaded_at" id="form-loaded-at" />
+
+          <!-- Name and Email Row -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex flex-col gap-2">
+              <label for="name" class="text-stone-400 text-sm font-medium"
+                >Name</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="bg-neutral-900/40 backdrop-blur-md rounded-2xl text-white border border-neutral-800 px-6 py-4 placeholder-stone-600 focus:outline-none focus:border-[#98D517] transition-colors duration-200"
+                placeholder="Your name"
+              />
+            </div>
+            <div class="flex flex-col gap-2">
+              <label for="email" class="text-stone-400 text-sm font-medium"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="bg-neutral-900/40 backdrop-blur-md rounded-2xl text-white border border-neutral-800 px-6 py-4 placeholder-stone-600 focus:outline-none focus:border-[#98D517] transition-colors duration-200"
+                placeholder="your@email.com"
+              />
+            </div>
+          </div>
+
+          <!-- Subject -->
+          <div class="flex flex-col gap-2">
+            <label for="subject" class="text-stone-400 text-sm font-medium"
+              >Subject</label
+            >
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              required
+              class="bg-neutral-900/40 backdrop-blur-md rounded-2xl text-white border border-neutral-800 px-6 py-4 placeholder-stone-600 focus:outline-none focus:border-[#98D517] transition-colors duration-200"
+              placeholder="What is this about?"
+            />
+          </div>
+
+          <!-- Message -->
+          <div class="flex flex-col gap-2">
+            <label for="message" class="text-stone-400 text-sm font-medium"
+              >Message</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows={6}
+              required
+              class="bg-neutral-900/40 backdrop-blur-md rounded-2xl text-white border border-neutral-800 px-6 py-4 placeholder-stone-600 focus:outline-none focus:border-[#98D517] transition-colors duration-200 resize-none"
+              placeholder="Tell me about your project..."></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            id="submit-btn"
+            class="font-medium bg-neutral-500/20 backdrop-blur-[2px] px-8 py-4 text-white border border-white/20 rounded-full duration-200 text-center hover:shadow-[0px_0px_10px_rgba(152,213,23,0.6)] hover:border-[#98D517] hover:bg-[#98D517]/10 transition-all w-full md:w-fit md:mx-auto disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Direct contact info -->
+    <div class="flex justify-center mt-12 w-full">
+      <div
+        class="w-full max-w-2xl rounded-3xl border border-neutral-800 bg-neutral-900/40 backdrop-blur-md px-10 py-10 flex flex-col items-center gap-4 text-center"
+      >
+        <p class="text-stone-400">Or reach out directly:</p>
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 text-stone-300">
+          <a
+            href="tel:+48573990182"
+            class="hover:text-[#98D517] transition-colors">+48 573 990 182</a
+          >
+          <a
+            href="mailto:przemyslaw.tomanek02@gmail.com"
+            class="hover:text-[#98D517] transition-colors"
+            >przemyslaw.tomanek02@gmail.com</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EmailJS SDK -->
+<script
+  is:inline
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+></script>
+
+<script is:inline>
+  (function () {
+    function init() {
+      const form = document.getElementById("contact-form");
+      if (!form) return;
+
+      const loadedAtInput = document.getElementById("form-loaded-at");
+      if (loadedAtInput) loadedAtInput.value = Date.now().toString();
+
+      const key = form.dataset.key;
+      const service = form.dataset.service;
+      const template = form.dataset.template;
+
+      if (key && window.emailjs) {
+        window.emailjs.init(key);
+      }
+
+      const successEl = document.getElementById("form-success");
+      const errorEl = document.getElementById("form-error");
+      const submitBtn = document.getElementById("submit-btn");
+
+      function showSuccess() {
+        if (successEl) successEl.classList.remove("hidden");
+        if (errorEl) errorEl.classList.add("hidden");
+      }
+
+      function showError(msg) {
+        if (errorEl) {
+          errorEl.textContent =
+            msg ||
+            "Something went wrong. Please try again or contact me directly.";
+          errorEl.classList.remove("hidden");
+        }
+        if (successEl) successEl.classList.add("hidden");
+      }
+
+      function hideMessages() {
+        if (successEl) successEl.classList.add("hidden");
+        if (errorEl) errorEl.classList.add("hidden");
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        hideMessages();
+
+        // 1. Honeypot check
+        const honeypot = form.querySelector('[name="honeypot"]');
+        if (honeypot && honeypot.value) return;
+
+        // 2. Time-based check (at least 3s on form)
+        const loadedAt = loadedAtInput ? parseInt(loadedAtInput.value) : 0;
+        if (Date.now() - loadedAt < 3000) {
+          showError("Please take your time filling out the form.");
+          return;
+        }
+
+        // 3. Rate limiting: 60s between submissions
+        const lastSent = localStorage.getItem("contact_last_sent");
+        if (lastSent && Date.now() - parseInt(lastSent) < 60000) {
+          const remaining = Math.ceil(
+            (60000 - (Date.now() - parseInt(lastSent))) / 1000
+          );
+          showError(
+            "Please wait " + remaining + " seconds before sending another message."
+          );
+          return;
+        }
+
+        // 4. EmailJS config check
+        if (!key || !service || !template) {
+          showError(
+            "Email service is not configured. Please contact me directly at przemyslaw.tomanek02@gmail.com"
+          );
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending...";
+
+        window.emailjs
+          .sendForm(service, template, form)
+          .then(function () {
+            showSuccess();
+            form.reset();
+            localStorage.setItem("contact_last_sent", Date.now().toString());
+          })
+          .catch(function (err) {
+            console.error("EmailJS error:", err);
+            showError(
+              "Something went wrong. Please try again or contact me directly."
+            );
+          })
+          .finally(function () {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Send Message";
+          });
+      });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", init);
+    } else {
+      init();
+    }
+  })();
+</script>
