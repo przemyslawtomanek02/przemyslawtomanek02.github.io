@@ -54,7 +54,7 @@ const faqs = [
 
   <!-- Header -->
   <div
-    class="relative h-full mx-auto flex items-center justify-center flex-col gap-4 px-4"
+    class="relative h-full mx-auto max-w-7xl flex items-center justify-center flex-col gap-4 px-4"
   >
     <span
       class="inline-block bg-black px-4 py-2 rounded-full text-stone-400 border border-[#3F3E3E]"
@@ -78,8 +78,8 @@ const faqs = [
   </div>
 
   <!-- FAQ List -->
-  <div class="flex justify-center mt-16">
-    <div class="flex flex-col gap-4 w-full max-w-2xl px-4">
+  <div class="flex justify-center mt-16 max-w-7xl mx-auto">
+    <div class="flex flex-col gap-4 w-full px-4">
       {
         faqs.map((faq) => (
           <div class="faq-element bg-neutral-900/40 backdrop-blur-md rounded-3xl text-stone-400 border border-neutral-800 p-8">

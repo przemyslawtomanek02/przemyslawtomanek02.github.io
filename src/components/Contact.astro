@@ -10,7 +10,7 @@ const emailjsTemplateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
 >
   <!-- Content -->
   <div
-    class="relative h-full mx-auto flex items-center justify-center flex-col gap-4 px-4"
+    class="relative h-full mx-auto max-w-7xl flex items-center justify-center flex-col gap-4 px-4"
   >
     <!-- Header -->
     <span
@@ -29,14 +29,14 @@ const emailjsTemplateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
         questions?
       </span>
     </h1>
-    <p class="text-stone-400 text-center leading-relaxed max-w-2xl">
+    <p class="text-stone-400 text-center leading-relaxed">
       Let's discuss your project and find the perfect solution together. Fill
       out the form below and I'll get back to you within 24 hours.
     </p>
 
     <!-- Form -->
     <div class="flex justify-center mt-12 w-full">
-      <div class="w-full max-w-2xl">
+      <div class="w-full">
         <!-- Status messages -->
         <div
           id="form-success"
@@ -147,7 +147,7 @@ const emailjsTemplateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
     <!-- Direct contact info -->
     <div class="flex justify-center mt-12 w-full">
       <div
-        class="w-full max-w-2xl rounded-3xl border border-neutral-800 bg-neutral-900/40 backdrop-blur-md px-10 py-10 flex flex-col items-center gap-4 text-center"
+        class="w-full rounded-3xl border border-neutral-800 bg-neutral-900/40 backdrop-blur-md px-10 py-10 flex flex-col items-center gap-4 text-center"
       >
         <p class="text-stone-400">Or reach out directly:</p>
         <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 text-stone-300">
