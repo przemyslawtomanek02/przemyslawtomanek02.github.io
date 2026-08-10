@@ -15,17 +15,19 @@ const emailjsTemplateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
     <!-- Header -->
     <span
       class="inline-block bg-black px-4 py-2 rounded-full text-stone-400 border border-[#3F3E3E]"
+      data-i18n="contact.badge"
     >
       Contact
     </span>
     <h1
       class="text-transparent bg-clip-text bg-gradient-to-r from-white to-neutral-400 font-medium text-4xl md:text-5xl text-center leading-tight pb-2"
+      data-i18n="contact.title"
     >
       Let's talk about an opportunity
     </h1>
     <p class="text-stone-400 text-center leading-relaxed">
-      Hiring or know a team looking for a UI/UX Designer & Developer? <br />
-      Fill out the form below and I'll get back to you within 24 hours.
+      <span data-i18n="contact.subtitleLine1">Hiring or know a team looking for a UI/UX Designer & Developer?</span> <br />
+      <span data-i18n="contact.subtitleLine2">Fill out the form below and I'll get back to you within 24 hours.</span>
     </p>
 
     <!-- Form -->
@@ -35,6 +37,7 @@ const emailjsTemplateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
         <div
           id="form-success"
           class="hidden mb-6 p-4 bg-[#98D517]/10 border border-[#98D517]/30 rounded-2xl text-[#98D517] text-center text-sm"
+          data-i18n="contact.formSuccess"
         >
           ✓ Message sent successfully! I'll get back to you within 24 hours.
         </div>
@@ -70,7 +73,7 @@ const emailjsTemplateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
           <!-- Name and Email Row -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="flex flex-col gap-2">
-              <label for="name" class="text-stone-400 text-sm font-medium"
+              <label for="name" class="text-stone-400 text-sm font-medium" data-i18n="contact.labelName"
                 >Name</label
               >
               <input
@@ -80,10 +83,11 @@ const emailjsTemplateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
                 required
                 class="bg-neutral-900/40 backdrop-blur-md rounded-2xl text-white border border-neutral-800 px-6 py-4 placeholder-stone-600 focus:outline-none focus:border-[#98D517] transition-colors duration-200"
                 placeholder="Your name"
+                data-i18n-placeholder="contact.placeholderName"
               />
             </div>
             <div class="flex flex-col gap-2">
-              <label for="email" class="text-stone-400 text-sm font-medium"
+              <label for="email" class="text-stone-400 text-sm font-medium" data-i18n="contact.labelEmail"
                 >Email</label
               >
               <input
@@ -93,13 +97,14 @@ const emailjsTemplateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
                 required
                 class="bg-neutral-900/40 backdrop-blur-md rounded-2xl text-white border border-neutral-800 px-6 py-4 placeholder-stone-600 focus:outline-none focus:border-[#98D517] transition-colors duration-200"
                 placeholder="your@email.com"
+                data-i18n-placeholder="contact.placeholderEmail"
               />
             </div>
           </div>
 
           <!-- Subject -->
           <div class="flex flex-col gap-2">
-            <label for="subject" class="text-stone-400 text-sm font-medium"
+            <label for="subject" class="text-stone-400 text-sm font-medium" data-i18n="contact.labelSubject"
               >Subject</label
             >
             <input
@@ -109,12 +114,13 @@ const emailjsTemplateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
               required
               class="bg-neutral-900/40 backdrop-blur-md rounded-2xl text-white border border-neutral-800 px-6 py-4 placeholder-stone-600 focus:outline-none focus:border-[#98D517] transition-colors duration-200"
               placeholder="What is this about?"
+              data-i18n-placeholder="contact.placeholderSubject"
             />
           </div>
 
           <!-- Message -->
           <div class="flex flex-col gap-2">
-            <label for="message" class="text-stone-400 text-sm font-medium"
+            <label for="message" class="text-stone-400 text-sm font-medium" data-i18n="contact.labelMessage"
               >Message</label
             >
             <textarea
@@ -123,7 +129,8 @@ const emailjsTemplateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
               rows={6}
               required
               class="bg-neutral-900/40 backdrop-blur-md rounded-2xl text-white border border-neutral-800 px-6 py-4 placeholder-stone-600 focus:outline-none focus:border-[#98D517] transition-colors duration-200 resize-none"
-              placeholder="Tell me about your project..."></textarea>
+              placeholder="Tell me about your project..."
+              data-i18n-placeholder="contact.placeholderMessage"></textarea>
           </div>
 
           <!-- Submit Button -->
@@ -131,6 +138,7 @@ const emailjsTemplateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
             type="submit"
             id="submit-btn"
             class="font-medium bg-neutral-500/20 backdrop-blur-[2px] px-8 py-4 text-white border border-white/20 rounded-full duration-200 text-center hover:shadow-[0px_0px_10px_rgba(152,213,23,0.6)] hover:border-[#98D517] hover:bg-[#98D517]/10 transition-all w-full md:w-fit md:mx-auto disabled:opacity-50 disabled:cursor-not-allowed"
+            data-i18n="contact.submit"
           >
             Send Message
           </button>
@@ -143,7 +151,7 @@ const emailjsTemplateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
       <div
         class="w-full max-w-3xl rounded-3xl border border-neutral-800 bg-neutral-900/40 backdrop-blur-md px-10 py-10 flex flex-col items-center gap-4 text-center"
       >
-        <p class="text-stone-400">Or reach out directly:</p>
+        <p class="text-stone-400" data-i18n="contact.reachDirectly">Or reach out directly:</p>
         <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 text-stone-300">
           <a
             href="tel:+48573990182"
@@ -187,6 +195,35 @@ const emailjsTemplateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
       const errorEl = document.getElementById("form-error");
       const submitBtn = document.getElementById("submit-btn");
 
+      const msgs = {
+        en: {
+          sending: "Sending...",
+          submit: "Send Message",
+          errTakeYourTime: "Please take your time filling out the form.",
+          errWait: function (n) {
+            return "Please wait " + n + " seconds before sending another message.";
+          },
+          errNotConfigured:
+            "Email service is not configured. Please contact me directly at przemyslaw.tomanek02@gmail.com",
+          errGeneric: "Something went wrong. Please try again or contact me directly.",
+        },
+        pl: {
+          sending: "Wysyłanie...",
+          submit: "Wyślij wiadomość",
+          errTakeYourTime: "Nie spiesz się z wypełnianiem formularza.",
+          errWait: function (n) {
+            return "Poczekaj " + n + " sekund przed wysłaniem kolejnej wiadomości.";
+          },
+          errNotConfigured:
+            "Usługa e-mail nie jest skonfigurowana. Skontaktuj się ze mną bezpośrednio: przemyslaw.tomanek02@gmail.com",
+          errGeneric: "Coś poszło nie tak. Spróbuj ponownie lub skontaktuj się ze mną bezpośrednio.",
+        },
+      };
+
+      function t() {
+        return document.documentElement.lang === "pl" ? msgs.pl : msgs.en;
+      }
+
       function showSuccess() {
         if (successEl) successEl.classList.remove("hidden");
         if (errorEl) errorEl.classList.add("hidden");
@@ -194,9 +231,7 @@ const emailjsTemplateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
 
       function showError(msg) {
         if (errorEl) {
-          errorEl.textContent =
-            msg ||
-            "Something went wrong. Please try again or contact me directly.";
+          errorEl.textContent = msg || t().errGeneric;
           errorEl.classList.remove("hidden");
         }
         if (successEl) successEl.classList.add("hidden");
@@ -218,7 +253,7 @@ const emailjsTemplateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
         // 2. Time-based check (at least 3s on form)
         const loadedAt = loadedAtInput ? parseInt(loadedAtInput.value) : 0;
         if (Date.now() - loadedAt < 3000) {
-          showError("Please take your time filling out the form.");
+          showError(t().errTakeYourTime);
           return;
         }
 
@@ -228,22 +263,18 @@ const emailjsTemplateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
           const remaining = Math.ceil(
             (60000 - (Date.now() - parseInt(lastSent))) / 1000
           );
-          showError(
-            "Please wait " + remaining + " seconds before sending another message."
-          );
+          showError(t().errWait(remaining));
           return;
         }
 
         // 4. EmailJS config check
         if (!key || !service || !template) {
-          showError(
-            "Email service is not configured. Please contact me directly at przemyslaw.tomanek02@gmail.com"
-          );
+          showError(t().errNotConfigured);
           return;
         }
 
         submitBtn.disabled = true;
-        submitBtn.textContent = "Sending...";
+        submitBtn.textContent = t().sending;
 
         window.emailjs
           .sendForm(service, template, form)
@@ -254,13 +285,11 @@ const emailjsTemplateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
           })
           .catch(function (err) {
             console.error("EmailJS error:", err);
-            showError(
-              "Something went wrong. Please try again or contact me directly."
-            );
+            showError(t().errGeneric);
           })
           .finally(function () {
             submitBtn.disabled = false;
-            submitBtn.textContent = "Send Message";
+            submitBtn.textContent = t().submit;
           });
       });
     }

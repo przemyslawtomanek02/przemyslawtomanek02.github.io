@@ -47,15 +47,17 @@ const services = [
     <div class="flex flex-col items-center gap-4 text-center mb-16">
       <p
         class="bg-black px-4 py-2 rounded-full text-stone-400 border border-[#3F3E3E] text-sm"
+        data-i18n="service.badge"
       >
         Skills
       </p>
       <h1
         class="text-transparent bg-clip-text bg-gradient-to-r from-white to-neutral-400 font-medium text-4xl md:text-5xl leading-tight"
+        data-i18n="service.title"
       >
         What I bring to a team
       </h1>
-      <p class="text-stone-400 text-base max-w-xl leading-relaxed">
+      <p class="text-stone-400 text-base max-w-xl leading-relaxed" data-i18n="service.subtitle">
         I combine design and development skills to help teams ship products
         that are both well-designed and well-built.
       </p>
@@ -75,7 +77,7 @@ const services = [
       <!-- Cards -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {
-          services.map((s) => (
+          services.map((s, i) => (
             <div class="group flex flex-col gap-5 p-8 rounded-2xl border border-neutral-800/70 bg-neutral-900/30 backdrop-blur-sm hover:bg-neutral-900/60 hover:border-neutral-700 transition-all duration-300">
               <!-- Icon pill -->
               <div class="w-14 h-14 flex items-center justify-center rounded-2xl bg-neutral-800/80 group-hover:bg-neutral-700/80 transition-colors shrink-0">
@@ -84,14 +86,15 @@ const services = [
 
               <!-- Title -->
               <h2 class="text-white font-medium text-2xl leading-tight">
-                {s.title} {s.titleItalic}
+                <span data-i18n={`service.items.${i}.title`}>{s.title}</span>{" "}
+                <span data-i18n={`service.items.${i}.titleItalic`}>{s.titleItalic}</span>
               </h2>
 
               <!-- Divider -->
               <div class="w-full h-px bg-neutral-800 group-hover:bg-neutral-700 transition-colors" />
 
               <!-- Description -->
-              <p class="text-stone-400 text-sm leading-relaxed group-hover:text-stone-300 transition-colors">
+              <p class="text-stone-400 text-sm leading-relaxed group-hover:text-stone-300 transition-colors" data-i18n={`service.items.${i}.description`}>
                 {s.description}
               </p>
             </div>

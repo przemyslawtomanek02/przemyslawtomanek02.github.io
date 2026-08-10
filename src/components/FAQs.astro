@@ -57,16 +57,18 @@ const faqs = [
   >
     <span
       class="inline-block bg-black px-4 py-2 rounded-full text-stone-400 border border-[#3F3E3E]"
+      data-i18n="faqs.badge"
     >
       FAQs
     </span>
     <h1
       class="text-transparent bg-clip-text bg-gradient-to-r from-white to-neutral-400 font-medium text-4xl md:text-5xl text-center leading-tight pb-2"
+      data-i18n="faqs.title"
     >
       Frequently asked questions
     </h1>
     <p class="text-stone-400 text-center leading-relaxed">
-      Common questions recruiters and hiring teams ask <br /> about my skills and availability.
+      <span data-i18n="faqs.subtitleLine1">Common questions recruiters and hiring teams ask</span> <br /> <span data-i18n="faqs.subtitleLine2">about my skills and availability.</span>
     </p>
   </div>
 
@@ -74,10 +76,10 @@ const faqs = [
   <div class="flex justify-center mt-16 max-w-3xl mx-auto">
     <div class="flex flex-col gap-4 w-full px-4">
       {
-        faqs.map((faq) => (
+        faqs.map((faq, i) => (
           <div class="faq-element bg-neutral-900/40 backdrop-blur-md rounded-3xl text-stone-400 border border-neutral-800 p-8">
             <div class="flex justify-between items-center gap-4 cursor-pointer button">
-              <h2 class="text-transparent bg-clip-text bg-gradient-to-r from-white to-neutral-400 font-medium text-xl select-none">
+              <h2 class="text-transparent bg-clip-text bg-gradient-to-r from-white to-neutral-400 font-medium text-xl select-none" data-i18n={`faqs.items.${i}.question`}>
                 {faq.question}
               </h2>
               <div class="shrink-0">
@@ -89,7 +91,7 @@ const faqs = [
               </div>
             </div>
             <div class="faq-answer overflow-hidden transition-all duration-400 ease-in-out">
-              <p class="pt-4 leading-relaxed">{faq.answer}</p>
+              <p class="pt-4 leading-relaxed" data-i18n={`faqs.items.${i}.answer`}>{faq.answer}</p>
             </div>
           </div>
         ))

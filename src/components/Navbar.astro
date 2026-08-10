@@ -32,39 +32,50 @@ import logo from "../assets/logo-1.svg";
           <a
             href="#home"
             class="text-stone-300 hover:text-white transition-colors duration-200"
-            >Home</a
+            data-i18n="nav.home">Home</a
           >
         </li>
         <li>
           <a
             href="#services"
             class="text-stone-300 hover:text-white transition-colors duration-200"
-            >Services</a
+            data-i18n="nav.services">Services</a
           >
         </li>
         <li>
           <a
             href="#portfolio"
             class="text-stone-300 hover:text-white transition-colors duration-200"
-            >Portfolio</a
+            data-i18n="nav.portfolio">Portfolio</a
           >
         </li>
         <li>
           <a
             href="#blog"
             class="text-stone-300 hover:text-white transition-colors duration-200"
-            >Blog</a
+            data-i18n="nav.blog">Blog</a
           >
         </li>
       </ul>
 
-      <!-- Desktop contact button -->
-      <a
-        href="#contact"
-        class="hidden md:inline-flex items-center text-sm font-medium px-5 py-2 text-white border border-white/20 rounded-full bg-neutral-500/20 backdrop-blur-sm hover:border-white/50 hover:shadow-[0_0_12px_rgba(255,255,255,0.2)] transition-all duration-200"
-      >
-        Contact
-      </a>
+      <!-- Desktop contact button + language toggle -->
+      <div class="hidden md:flex items-center gap-3">
+        <button
+          type="button"
+          class="lang-toggle-btn inline-flex items-center justify-center w-10 h-10 text-lg leading-none border border-white/20 rounded-full bg-neutral-500/20 backdrop-blur-sm hover:border-white/50 hover:shadow-[0_0_12px_rgba(255,255,255,0.2)] transition-all duration-200"
+          aria-label="Zmień język / Change language"
+        >
+          <span class="lang-flag-pl" aria-hidden="true">🇵🇱</span>
+          <span class="lang-flag-uk hidden" aria-hidden="true">🇬🇧</span>
+        </button>
+        <a
+          href="#contact"
+          class="inline-flex items-center text-sm font-medium px-5 py-2 text-white border border-white/20 rounded-full bg-neutral-500/20 backdrop-blur-sm hover:border-white/50 hover:shadow-[0_0_12px_rgba(255,255,255,0.2)] transition-all duration-200"
+          data-i18n="nav.contact"
+        >
+          Contact
+        </a>
+      </div>
 
       <!-- Mobile hamburger -->
       <button
@@ -95,42 +106,57 @@ import logo from "../assets/logo-1.svg";
           <a
             href="#home"
             class="block py-1 text-stone-300 hover:text-white transition-colors"
-            >Home</a
+            data-i18n="nav.home">Home</a
           >
         </li>
         <li>
           <a
             href="#services"
             class="block py-1 text-stone-300 hover:text-white transition-colors"
-            >Services</a
+            data-i18n="nav.services">Services</a
           >
         </li>
         <li>
           <a
             href="#portfolio"
             class="block py-1 text-stone-300 hover:text-white transition-colors"
-            >Portfolio</a
+            data-i18n="nav.portfolio">Portfolio</a
           >
         </li>
         <li>
           <a
             href="#blog"
             class="block py-1 text-stone-300 hover:text-white transition-colors"
-            >Blog</a
+            data-i18n="nav.blog">Blog</a
           >
         </li>
       </ul>
-      <a
-        href="#contact"
-        class="w-full text-sm font-medium px-5 py-2.5 text-white border border-white/20 rounded-full text-center bg-neutral-500/20 hover:border-white/50 transition-all duration-200"
-      >
-        Contact
-      </a>
+      <div class="flex items-center gap-3 w-full">
+        <button
+          type="button"
+          class="lang-toggle-btn shrink-0 inline-flex items-center justify-center w-11 h-11 text-lg leading-none border border-white/20 rounded-full bg-neutral-500/20 hover:border-white/50 transition-all duration-200"
+          aria-label="Zmień język / Change language"
+        >
+          <span class="lang-flag-pl" aria-hidden="true">🇵🇱</span>
+          <span class="lang-flag-uk hidden" aria-hidden="true">🇬🇧</span>
+        </button>
+        <a
+          href="#contact"
+          class="flex-1 text-sm font-medium px-5 py-2.5 text-white border border-white/20 rounded-full text-center bg-neutral-500/20 hover:border-white/50 transition-all duration-200"
+          data-i18n="nav.contact"
+        >
+          Contact
+        </a>
+      </div>
     </div>
   </nav>
 </div>
 
 <script>
+  import { initLanguageToggle } from "../i18n/apply";
+
+  initLanguageToggle();
+
   const menuBtn = document.querySelector(".menu-btn");
   const mobileMenu = document.querySelector(".mobile-menu");
 
