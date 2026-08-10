@@ -1,6 +1,61 @@
 ---
 import projectSectionBg from "../assets/bg-journey.png";
 import profileImage from "../assets/profile-image.svg";
+
+const experience = [
+  {
+    company: "New Level Sport",
+    role: "UX Designer",
+    period: "01.01.2025 – present",
+    current: true,
+    points: [
+      "Own the end-to-end user experience of the website and online store, from research and wireframes to final UI.",
+      "Handle website and store administration, and contribute to the front-end code and visual/graphic design.",
+      "Manage Instagram and social media presence for the brand.",
+    ],
+  },
+  {
+    company: "Self-employed",
+    role: "Freelancer – Product Design",
+    period: "Ongoing",
+    current: true,
+    points: [
+      "Work with private clients and small businesses on a freelance basis in my free time.",
+      "Services mainly include building web and mobile applications and websites.",
+      "Also handle UI/UX and graphic design for these projects.",
+    ],
+  },
+  {
+    company: "KRIONI.PL",
+    role: "Computer Service Technician (Internship)",
+    period: "05.2020 – 06.2020",
+    current: false,
+    points: [
+      "Mainly responsible for computer servicing and repairs.",
+      "Worked on setting up and servicing internet networks, including routers, TCP/IP, and WLAN configuration.",
+      "Gained hands-on experience with Linux.",
+    ],
+  },
+];
+
+const education = [
+  {
+    degree: "Computer Science Studies",
+    period: "2023 - present",
+    school: "University of Information Technology and Management",
+    mode: "Part-time",
+    description:
+      "Currently studying computer science part-time, working toward an engineering degree. I have a clear goal and am consistently working toward it.",
+  },
+  {
+    degree: "IT Technical Secondary School",
+    period: "2018 - 2022",
+    school:
+      "Poviat School Complex No. 2 – Sports and Technical Championship Schools",
+    mode: "",
+    description: "",
+  },
+];
 ---
 
 <section
@@ -36,11 +91,69 @@ import profileImage from "../assets/profile-image.svg";
       />
       digital products across multiple industries and platforms.
     </p>
+
     <img
       src={`${profileImage.src}`}
       alt="Portfolio image"
       class="my-8 [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_calc(100%-30px),transparent_100%)] [mask-image:linear-gradient(to_bottom,black_0%,black_calc(100%-30px),transparent_100%)]"
     />
+
+    <!-- Experience timeline -->
+    <div class="w-full max-w-2xl flex flex-col gap-6 mb-8">
+      <h2 class="text-white font-medium text-2xl">Experience</h2>
+      {
+        experience.map((job) => (
+          <div class="relative pl-8 border-l border-neutral-800">
+            <span
+              class={`absolute -left-[7px] top-1 w-3.5 h-3.5 rounded-full border-2 border-black ${job.current ? "bg-[#98D517]" : "bg-neutral-600"}`}
+            />
+            <div class="flex flex-col gap-1 mb-2">
+              <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <h3 class="text-white font-medium text-xl">{job.role}</h3>
+                <span class="text-stone-400 text-sm">— {job.company}</span>
+              </div>
+              <span class="text-stone-500 text-sm">{job.period}</span>
+            </div>
+            <ul class="flex flex-col gap-1.5">
+              {job.points.map((point) => (
+                <li class="text-stone-400 text-sm leading-relaxed flex gap-2">
+                  <span class="text-[#98D517] shrink-0">•</span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Education -->
+    <div
+      class="w-full max-w-2xl rounded-2xl border border-neutral-800/70 bg-neutral-900/30 backdrop-blur-sm p-8 flex flex-col gap-6 mb-8"
+    >
+      <h2 class="text-white font-medium text-2xl">Education</h2>
+      {
+        education.map((edu) => (
+          <div class="flex flex-col gap-1.5">
+            <div class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+              <h3 class="text-white font-medium text-lg">{edu.degree}</h3>
+              <span class="text-[#98D517] font-medium text-sm">
+                {edu.period}
+              </span>
+            </div>
+            <p class="text-stone-400 text-sm">
+              {edu.school}
+              {edu.mode && <span class="text-stone-500"> - {edu.mode}</span>}
+            </p>
+            {edu.description && (
+              <p class="text-stone-400 text-sm leading-relaxed mt-1">
+                {edu.description}
+              </p>
+            )}
+          </div>
+        ))
+      }
+    </div>
 
     <a
       href="https://drive.google.com/drive/folders/1welhQfdhVrfKdmJAiE_OmM1M3cL9PfrY?usp=sharing"
